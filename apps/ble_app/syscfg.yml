@@ -6,7 +6,7 @@
 # to you under the Apache License, Version 2.0 (the
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
-# 
+#
 #  http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing,
@@ -17,24 +17,12 @@
 # under the License.
 #
 
-project.name: "mynewt-dw1000-apps"
+# Settings this app defines.
+syscfg.defs:
 
-project.repositories:
-    - apache-mynewt-core
-    - mynewt-dw1000-core
-
-# Use github's distribution mechanism for core ASF libraries.
-# This provides mirroring automatically for us.
-#
-repository.apache-mynewt-core:
-    type: github
-    vers: 1.7.0
-    user: apache
-    repo: mynewt-core
-
-repository.mynewt-dw1000-core:
-    type: github
-    vers: 0-dev
-    user: decawave
-    repo: mynewt-dw1000-core
-    url: 'git@github.com:Decawave/mynewt-dw1000-core.git'
+# Settings this app overrides.
+syscfg.vals:
+    SHELL_TASK: 1
+    CONFIG_FCB: 1
+    CONFIG_CLI: 1
+    LOG_LEVEL: 1
